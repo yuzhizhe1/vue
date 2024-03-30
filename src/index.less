@@ -1,0 +1,100 @@
+:root {
+    --text1: #213547;
+    --text2: #3c3c3cb3;
+    --text3: #3c3c3c54;
+    --green1: #42d392;
+    --gray: #8e8e8e;
+    --bg: #fff;
+    --divider-light: #3c3c3c1f;
+    --bg-mute: #f1f1f1;
+    --divider: #3c3c3c4a;
+    --nav-height: 55px;
+    --shadow-3: 0 12px 32px rgba(0, 0, 0, .1),
+        0 2px 6px rgba(0, 0, 0, .08);
+    --shadow1: 0 1px 2px rgba(0, 0, 0, .04),
+        0 1px 2px rgba(0, 0, 0, .06);
+    --brand: #42b883;
+    --z-index-nav: 20;
+    --docsearch-key-shadow: none;
+    --docsearch-key-gradient: linear-gradient(-225deg, #d5dbe4, #f8f8f8);
+    --white: #fff;
+    --bg-soft: #f9f9f9;
+}
+
+
+html[data-theme="dark"] {
+    color-scheme: dark;
+    --text1: #ffffffde;
+    --text2: #ebebeb99;
+    --text3: #ebebeb61;
+    --green1: #42d392;
+    --gray: #8e8e8e;
+    --bg: #1a1a1a;
+    --bg-mute: #2f2f2f;
+    --divider: #545454a6;
+    --docsearch-key-shadow: none 0 1px 2px 1px rgba(30, 35, 90, .4);
+    --white: #1a1a1a;
+}
+
+body {
+    margin: 0;
+    font-family: Quotes, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    letter-spacing: .2px;
+    color: var(--text1);
+    width: 100%;
+    min-width: 320px;
+    min-height: 100vh;
+    line-height: 24px;
+    font-size: 16px;
+    font-weight: 400;
+    direction: ltr;
+}
+
+pre,
+code,
+kbd,
+    {
+    font-family: varMenlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    text-decoration: inherit;
+}
+
+*,
+:before,
+:after {
+    box-sizing: border-box;
+}
+
+img,
+svg {
+    display: block;
+    vertical-align: middle;
+}
+
+
+
+button[type="button"] {
+    border: none;
+    background: none;
+    padding: 0;
+}
+
+button[type="button"],
+[role=button] {
+    cursor: pointer;
+}

@@ -1,0 +1,6 @@
+{
+    "include": [
+        "./src/*",
+    "./src/*.vue", "src/utils/useTheme.js",
+]
+}

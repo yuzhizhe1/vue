@@ -1,0 +1,716 @@
+div.NavBar {
+    height: var(--nav-height);
+    border-bottom: 1px solid var(--divider-light);
+    padding: 0 12px 0 24px;
+    background-color: var(--bg);
+
+    div.container {
+        &:extend(.flexBox);
+        justify-content: space-between;
+        margin: 0 auto;
+        max-width: 1376px;
+
+        a.navBarTitle {
+            display: flex;
+            align-items: center;
+            padding-top: 1px;
+            height: var(--nav-height);
+            transition: opacity .25s;
+
+            svg.logo {
+                .svgWH(24px);
+            }
+
+            span {
+                padding-left: 8px;
+                font-size: 16px;
+                font-weight: 500;
+            }
+
+            &:hover {
+                opacity: .6;
+            }
+        }
+
+        div.content {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            flex-grow: 1;
+
+
+            div.NavBarSearch {
+                display: flex;
+                align-items: center;
+                padding-left: 16px;
+
+                button.DocSearch-button {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 0;
+                    width: 48px;
+                    height: 55px;
+                    background: transparent;
+
+                    span.DocSearch-Container {
+                        align-items: center;
+                        display: flex;
+
+
+                        .DocSearch-Icon {
+                            color: var(--text2);
+                            transition: color .5s;
+                            fill: currentColor;
+                            width: 18px;
+                            height: 18px;
+                            position: relative;
+                            stroke-width: 1.6;
+                        }
+
+                        @media (min-width: 768px) {
+                            .DocSearch-Icon {
+                                top: 1px;
+                                margin-right: 10px;
+                                width: 15px;
+                                height: 15px;
+                            }
+                        }
+
+                        span.DocSearch-Placeholder {
+                            transition: color .5s;
+                            font-size: 13px;
+                            font-weight: 500;
+                            color: var(--text2);
+                            display: none;
+                            padding: 0 10px 0 0;
+
+
+                            @media (min-width: 960px) {
+                                .DocSearch-Placeholder {
+                                    display: inline-block;
+                                }
+                            }
+
+
+
+
+                        }
+                    }
+
+                    span.DocSearch-keys {
+                        display: none;
+                        gap: 2px;
+                        min-width: auto;
+                        box-sizing: border-box;
+                        border: 1px solid var(--text3);
+                        border-radius: 4px;
+                        padding: 0 6px;
+                        font-family: inherit;
+                        font-size: 12px;
+                        height: 22px;
+                        line-height: 22px;
+                        font-weight: 500;
+                        transition: color .5s,
+                            border-color .5s;
+
+                        kdb {
+                            align-items: center;
+                            background: transparent;
+                            border-radius: 3px;
+                            box-shadow: var(--docsearch-key-shadow);
+                            display: flex;
+                            height: 22px;
+                            justify-content: center;
+                            position: relative;
+                            border: 0;
+                            top: -1px;
+                            width: auto;
+                            min-width: auto;
+                            font-family: inherit;
+                            font-size: 12px;
+                            padding: 0;
+                            margin: 0;
+                            color: var(--text3);
+                            transition: color .5s;
+                        }
+                    }
+
+                    @media (min-width: 768px) {
+                        span.DocSearch-keys {
+                            display: flex;
+                        }
+                    }
+
+                    &:hover span.DocSearch-Container {
+                        .DocSearch-Icon {
+                            color: var(--text1);
+                        }
+
+                        ;
+
+                        span.DocSearch-Placeholder {
+                            color: var(--text1);
+                            transition: color .25s
+                        }
+                    }
+
+                    ;
+
+                    &:hover span.DocSearch-keys {
+                        kdb {
+                            color: var(--green1);
+                        }
+                    }
+                }
+
+                @media (min-width: 768px) {
+                    button.DocSearch-button {
+                        justify-content: flex-start;
+                        width: 100%;
+                    }
+
+                }
+            }
+
+            @media (min-width: 768px) {
+                div.NavBarSearch {
+                    flex-grow: 1;
+                }
+            }
+
+
+
+            nav.NavBarMenu {
+                display: none;
+
+                a.flyoutMenu-link {
+                    padding: 0 12px;
+                    font-size: 13px;
+                    font-weight: 500;
+                    line-height: 55px;
+                }
+
+                button.flyout-button:hover {
+                    span {
+                        color: var(--text2);
+                    }
+                }
+
+                a.flyoutMenu-link:hover {
+                    color: var(--green1);
+                }
+            }
+
+            @media (min-width: 768px) {
+                nav.NavBarMenu {
+                    display: flex;
+                }
+            }
+
+            div.flyout {
+                position: relative;
+
+                button.flyout-button {
+                    padding: 0 12px;
+                    height: var(--nav-height);
+
+                    span {
+                        &:extend(.flexBoxCenter);
+                        font-size: 13px;
+                        color: var(--text1);
+
+                        svg.flyout-button-text-icon {
+                            .svgWH(14px);
+                            margin-left: 4px;
+                            fill: currentColor;
+                        }
+                    }
+
+                    div.locales-btn-icon-container {
+                        &:extend(.flexBoxCenter);
+
+                        &::after,
+                        &::before {
+                            content: '';
+                            background: var(--divider-light);
+                            width: 1px;
+                            height: 24px;
+                        }
+
+                        &::after {
+                            margin-left: 4px;
+                        }
+
+                        &::before {
+                            margin-right: 4px;
+
+
+                        }
+
+                        svg.locales-btn-icon {
+                            .svgWH(16px);
+                            margin: 0 8px;
+                            display: block;
+                            fill: var(--text1);
+                        }
+                    }
+                }
+            }
+
+            div.flyout-menu {
+                display: flex;
+                position: absolute;
+                top: calc(var(--nav-height) / 2 + 15px);
+                right: 0;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-4px);
+                transition: opacity .25s,
+                    visibility .25s,
+                    transform .25s;
+                max-height: calc(100vh - var(--nav-height));
+
+                div.menu {
+                    border-radius: 8px;
+                    padding: 12px 0;
+                    min-width: 192px;
+                    border: 1px solid transparent;
+                    background: var(--bg);
+                    box-shadow: var(--shadow-3);
+                    transition: background-color .5s;
+                    overflow: auto;
+
+
+
+                    div.menu-items {
+                        transition: border-color .5s;
+
+                        .menu-group {
+                            padding: 0 0 12px;
+                        }
+
+                        a.menu-link {
+                            display: block;
+                            padding: 0 18px;
+                            line-height: 28px;
+                            font-size: 13px;
+                            font-weight: 400;
+                            color: var(--text1);
+                            white-space: nowrap;
+
+                            transition: color .25s;
+
+                            &:hover {
+                                color: var(--brand)
+                            }
+                        }
+
+                    }
+                }
+            }
+
+            div.flyout:hover div.flyout-menu {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+
+
+
+                .menu-group-title {
+                    padding: 0 18px;
+                    line-height: 28px;
+                    font-size: 10px;
+                    font-weight: 600;
+                    color: var(--text3);
+                    text-transform: uppercase;
+                    transition: color .25s;
+                }
+
+
+            }
+
+        }
+
+
+        .NavBarAppearance {
+            /* 切换深色模式 */
+            margin-right: 8px;
+            display: none;
+
+            @media (min-width: 1280px) {
+                div.NavBarAppearance {
+                    display: block;
+                }
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .NavBarAppearance {
+                display: block;
+            }
+        }
+
+        button.switch {
+            cursor: pointer;
+            border: 1px solid var(--divider);
+            border-radius: 12px;
+            background-color: var(--bg-mute);
+            transition: border-color .25s,
+                background-color .25s;
+            width: 40px;
+            height: 22px;
+            position: relative;
+
+            &:hover {
+                border-color: var(--gray)
+            }
+
+            span.switch-check {
+                &:extend(.flexBoxCenter);
+                justify-content: center;
+                .svgWH(18px);
+                /* switch-checkWH */
+                background-color: var(--bg);
+                transition: color .25s,
+                    transform .25s;
+                border-radius: 50%;
+                background-color: var(--bg);
+
+
+                .switch-icon {
+                    .svgWH (18px);
+                    &:extend(.flexBoxCenter);
+                    justify-content: center;
+
+                    svg.switch-appearance-sun {
+                        .svgWH(12px);
+                        fill: var(--text2);
+                    }
+
+                    .switch-appearance-moon {
+                        .svgWH(12px);
+                        fill: var(--text1);
+                    }
+                }
+
+            }
+
+        }
+
+        .light span.switch-check {
+            transform: translateX(0%);
+
+            .switch-appearance-sun {
+                opacity: 1;
+                display: block;
+            }
+
+            .switch-appearance-moon {
+                opacity: 0;
+                display: none;
+            }
+        }
+
+        .dark span.switch-check {
+            transform: translateX(100%);
+            position: absolute;
+            top: 1px;
+            left: 1px;
+
+            .switch-appearance-sun {
+                opacity: 0;
+                display: none;
+            }
+
+            .switch-appearance-moon {
+                opacity: 1;
+                display: block;
+            }
+        }
+
+        div.socialLinks {
+            /* 社交 */
+            display: none;
+            height: var(--nav-height);
+            margin: 0 -10px 0 12px;
+
+            a.social-link {
+                &:extend(.flexBoxCenter);
+                justify-content: center;
+                color: var(--text2);
+
+                &:hover {
+                    color: var(--text1);
+                    transition: color .25s;
+
+                }
+
+                .svgWH(36px);
+                /* social-linkWH */
+
+                svg.social-link-icon {
+                    display: block;
+                    .svgWH(20px);
+                    fill: currentColor;
+                }
+            }
+
+            span {
+                display: none;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            div.socialLinks {
+                display: flex;
+                align-items: center;
+            }
+        }
+
+
+
+
+
+
+
+        .NavBarExtra {
+            display: none;
+
+            button.flyout-button {
+                .flyout-button-icon {
+                    width: 20px;
+                    height: 20px;
+                    fill: currentColor;
+                    transition: fill .25s;
+                }
+            }
+
+            .menu {
+                .menu-group {
+                    padding: 0 0 12px;
+
+                    .item[data-v-d817d99a] {
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    .menu-item {
+                        padding: 0 16px;
+                        white-space: nowrap;
+                        display: flex;
+                        align-items: center;
+
+                        .social-links {
+                            display: flex;
+                            justify-content: center;
+                            margin: -4px -8px;
+
+                            .social-link {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                color: var(--c-text-2);
+                                transition: color .5s;
+                            }
+                        }
+
+                        .social-link.is-small {
+                            width: 36px;
+                            height: 36px;
+
+                            .social-link-icon {
+                                width: 20px;
+                                height: 20px;
+                            }
+
+                            .visually-hidden {
+                                clip: rect(0 0 0 0);
+                                clip-path: inset(50%);
+                                height: 1px;
+                                overflow: hidden;
+                                position: absolute;
+                                white-space: nowrap;
+                                width: 1px;
+                            }
+                        }
+
+                        .menu-label {
+                            flex-grow: 1;
+                            line-height: 28px;
+                            font-size: 12px;
+                            font-weight: 500;
+                            color: var(--c-text-2);
+                            transition: color .5s;
+                        }
+
+                        .action {
+                            margin-right: -2px;
+                        }
+
+                        .menu-action {
+                            padding-left: 24px;
+
+                            button:focus:not(:focus-visible) {
+                                outline: none !important;
+                            }
+
+                            .switch {
+                                position: relative;
+                                border-radius: 11px;
+                                display: block;
+                                width: 40px;
+                                height: 22px;
+                                border: 1px solid var(--divider);
+                                background-color: var(--bg-mute);
+                                transition: border-color .25s, background-color .25s;
+
+                                .switch-check {
+                                    position: absolute;
+                                    top: 1px;
+                                    left: 1px;
+                                    width: 18px;
+                                    height: 18px;
+                                    border-radius: 50%;
+                                    background-color: var(---white);
+                                    box-shadow: var(--shadow);
+                                    transition: background-color .25s, transform .25s;
+
+                                    .switch-icon {
+                                        position: relative;
+                                        display: block;
+                                        width: 18px;
+                                        height: 18px;
+                                        border-radius: 50%;
+                                        overflow: hidden;
+
+                                        svg {
+                                            position: absolute;
+                                            top: 3px;
+                                            left: 3px;
+                                            width: 12px;
+                                            height: 12px;
+                                            fill: var(--text2);
+                                        }
+                                    }
+                                }
+                            }
+
+
+                            .switch:hover {
+                                border-color: var(--gray);
+                            }
+
+
+
+                        }
+                    }
+                }
+            }
+        }
+
+        @media (min-width: 768px) {
+            .NavBarExtra {
+                display: block;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .NavBarExtra {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    div.NavBar {
+        padding: 0 12px 0 32px;
+    }
+}
+
+@media (min-width: 1280px) {
+    div.NavBar {
+        padding: 0 32px;
+    }
+}
+
+
+.NavBarHamburger {
+    width: 40px;
+    height: var(--nav-height);
+
+    .hamburger-container {
+        position: relative;
+        width: 16px;
+        height: 14px;
+        overflow: hidden;
+
+        .hamburger-top {
+            top: 0;
+            left: 0;
+            transform: translate(0);
+        }
+
+        .hamburger-top,
+        .hamburger-middle,
+        .hamburger-bottom {
+            position: absolute;
+            width: 16px;
+            height: 2px;
+            background-color: var(--text1);
+            transition: top .25s, background-color .5s, transform .25s;
+        }
+
+        .hamburger-top {
+            top: 0;
+            left: 0;
+            transform: translate(0);
+        }
+
+        .hamburger-middle {
+            top: 6px;
+            left: 0;
+            transform: translate(8px);
+        }
+
+        .hamburger-bottom {
+            top: 12px;
+            left: 0;
+            transform: translate(4px);
+        }
+    }
+}
+
+.hamburger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .NavBarHamburger {
+        display: none;
+    }
+}
+
+.NavBarHamburger {
+    width: 40px;
+    height: var(--nav-height);
+}
+
+
+
+.flexBox {
+    display: flex;
+}
+
+.flexBoxCenter {
+    display: flex;
+    align-items: center;
+}
+
+.svgWH(@parameter) {
+    width: @parameter;
+    height: @parameter;
+}
